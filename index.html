@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CapCut Pro Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background: linear-gradient(45deg, #fe2c55, #25f4ee);
+            padding: 20px;
+        }
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+            justify-content: center;
+        }
+        .filter {
+            width: 100px;
+            text-align: center;
+        }
+        .filter-preview {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #ff4d4d, #f9cb28);
+            margin: 0 auto;
+            border: 3px solid transparent;
+        }
+        .filter.active .filter-preview {
+            border-color: #25f4ee;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CapCut Pro Clone</h1>
+        <p>50+ Free Filters - No Watermark</p>
+    </div>
+
+    <div class="filters">
+        <div class="filter active">
+            <div class="filter-preview"></div>
+            <p>Vintage</p>
+        </div>
+        <div class="filter">
+            <div class="filter-preview" style="background:linear-gradient(45deg,#0575e6,#00f260)"></div>
+            <p>Cool</p>
+        </div>
+        <div class="filter">
+            <div class="filter-preview" style="background:linear-gradient(45deg,#3a1c71,#d76d77)"></div>
+            <p>Dramatic</p>
+        </div>
+        <!-- Add more filters here -->
+    </div>
+
+    <script>
+        // Make filters clickable
+        document.querySelectorAll('.filter').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.filter').forEach(f => f.classList.remove('active'));
+                item.classList.add('active');
+                alert(`Applied ${item.querySelector('p').textContent} filter!`);
+            });
+        });
+    </script>
+</body>
+</html>
